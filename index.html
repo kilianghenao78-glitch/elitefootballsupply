@@ -1521,7 +1521,7 @@
   <div class="hero-bg"></div>
 
   <div class="hero-content">
-    <p class="hero-eyebrow">Temporada 2024/25</p>
+    <p class="hero-eyebrow">Temporada 25/26 · Mundial 2026</p>
     <h1 class="hero-title">
       Viste
       <em>el juego</em>
@@ -1558,8 +1558,9 @@
     <div class="jersey-container">
       <div class="jersey-glow"></div>
 
-      <!-- SVG Jersey illustration -->
-      <svg class="jersey-svg" viewBox="0 0 380 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Product Image -->
+      <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/IMG-2875_800x800.jpg?v=1778523957" alt="Camiseta EliteFootballSupply" class="jersey-svg" style="width:380px;height:440px;object-fit:cover;border-radius:4px;filter:drop-shadow(0 32px 64px rgba(0,0,0,0.8))" />
+      <svg class="jersey-svg" viewBox="0 0 380 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
         <defs>
           <linearGradient id="jerseyGrad" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stop-color="#1c1c1c"/>
@@ -2025,6 +2026,339 @@ const ADD_TO_CART_MUTATION = `
 
 // ─── LOAD PRODUCTS ───────────────────────────
 async function loadProducts() {
+  // Static products from CSV — always works
+  renderStaticProducts();
+  loadStaticFeatured();
+}
+
+function renderStaticProducts() {
+  const grid = document.getElementById('productsGrid');
+  grid.innerHTML = `
+    <div class="product-card observe-fade" style="transition-delay:0.0s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/image_1b46a851-1adc-443f-a4b7-ba1bf056ea38.png?v=1778523962" alt="Segunda equipación del corinthians" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        <span class="product-badge-tag tag-hot">🔥 Más Vendido</span>
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'segunda-equipacion-del-corinthians','Segunda equipación del corinthians')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Segunda equipación del corinthians</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">M</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€30.00</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card observe-fade" style="transition-delay:0.06s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/C9DB19BA-CB17-4CDE-9EA3-3BB42E102BCC_3d2d024f-15b7-48cf-ba70-e3b0fb612922.png?v=1778523961" alt="Segunda equipación de la selección Colombia" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        <span class="product-badge-tag tag-new">Nuevo</span>
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'segunda-equipacion-de-la-seleccion-colombia','Segunda equipación de la selección Colombia')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Segunda equipación de la selección Colombia</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">M</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€30.00</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card observe-fade" style="transition-delay:0.12s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/E8D17E80-D7F0-475B-B26B-A31C54ED6790.png?v=1778523959" alt="Segunda equipación de España" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        <span class="product-badge-tag tag-new">Nuevo</span>
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'camisa-de-espana-de-lamine','Segunda equipación de España')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Segunda equipación de España</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">L</span><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">S</span><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">M</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€29.99</span>
+            <span class="product-price-orig">€37.99</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card observe-fade" style="transition-delay:0.18s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/IMG-2875.jpg?v=1778523957" alt="Segunda equipación de Argentina" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        <span class="product-badge-tag tag-sale">Oferta</span>
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'sporting-goods-example-product-4','Segunda equipación de Argentina')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Segunda equipación de Argentina</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">S</span><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">M</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€29.99</span>
+            <span class="product-price-orig">€37.99</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card observe-fade" style="transition-delay:0.24s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/1707EE1D-B3B6-465F-8902-1A830F91C5CE.png?v=1778523956" alt="Retro 2012-2013 del santos" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'retro-2012-2013-del-santos','Retro 2012-2013 del santos')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Retro 2012-2013 del santos</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">M</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€30.00</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card observe-fade" style="transition-delay:0.3s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/image_a32b628f-231d-49ee-ac7f-25b7a24b8f98.png?v=1778523954" alt="Primera equipación del Madrid" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'primera-equipacion-del-madrid','Primera equipación del Madrid')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Primera equipación del Madrid</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">L</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€30.00</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card observe-fade" style="transition-delay:0.36s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/image.png?v=1778523952" alt="Primera equipación del Inter de Miami" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'primera-equipacion-del-inter-de-miami','Primera equipación del Inter de Miami')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Primera equipación del Inter de Miami</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">S</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€30.00</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card observe-fade" style="transition-delay:0.42s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/D627C4C5-DC45-46F4-8404-A0CA08948AB2.png?v=1778523951" alt="Primera equipación del Barcelona 25/26" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        <span class="product-badge-tag tag-sale">Oferta</span>
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'sporting-goods-example-product-2','Primera equipación del Barcelona 25/26')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Primera equipación del Barcelona 25/26</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">S</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€29.99</span>
+            <span class="product-price-orig">€37.99</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card observe-fade" style="transition-delay:0.48s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/4E47F3E3-6229-4904-B04B-ABEC22ECF7B5.png?v=1778523950" alt="Primera equipación de Portugal" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        <span class="product-badge-tag tag-sale">Oferta</span>
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'general-clothes-example-product-3','Primera equipación de Portugal')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Primera equipación de Portugal</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">M</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€29.99</span>
+            <span class="product-price-orig">€37.99</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card observe-fade" style="transition-delay:0.54s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/CBC78F7D-F915-4403-A8DB-DAC34F9ED034.png?v=1778523945" alt="Primera equipación de la Selección Colombia" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'primera-equipacion-de-la-seleccion-colombia','Primera equipación de la Selección Colombia')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Primera equipación de la Selección Colombia</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">M</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€30.00</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card observe-fade" style="transition-delay:0.6s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/image_fb1a82b7-7073-42da-804e-32cb87541573.png?v=1778523943" alt="Especial edición de Messi" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'especial-edicion-de-messi','Especial edición de Messi')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Especial edición de Messi</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">M</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€30.00</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card observe-fade" style="transition-delay:0.6599999999999999s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/A1399F95-E5CB-433C-89A4-2266EFC85B50.png?v=1778523942" alt="Equipación Barcelona 24/25" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'equipacion-barcelona-24-25','Equipación Barcelona 24/25')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Equipación Barcelona 24/25</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">S</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€30.00</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card observe-fade" style="transition-delay:0.72s">
+      <div class="product-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/C766F65A-70C5-479F-8A1E-E76DC5E288D5.png?v=1778523939" alt="Camiseta del Barcelona Aurora" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        
+        <div class="product-overlay"></div>
+        <div class="quick-add">
+          <button class="quick-add-btn" onclick="quickAddStatic(event,'sporting-goods-example-product-1','Camiseta del Barcelona Aurora')">
+            + Añadir al Carrito
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Camiseta del Barcelona Aurora</div>
+        <div style="margin:4px 0 6px"><span style="display:inline-block;padding:2px 6px;border:1px solid rgba(255,255,255,0.15);font-size:10px;margin:2px;font-family:monospace">M</span></div>
+        <div class="product-meta">
+          <div>
+            <span class="product-price">€29.99</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>`;
+  observeElements();
+}
+
+function loadStaticFeatured() {
+  document.getElementById('featuredTitle').textContent = 'Camiseta del Barcelona Aurora';
+  document.getElementById('featuredPrice').textContent = '€29.99';
+  document.getElementById('featuredDesc').textContent = 'Camiseta premium EliteFootballSupply. Tejido tecnico transpirable, corte slim fit moderno y diseno exclusivo. Lavado a 30C.';
+  document.getElementById('featuredMainImg').innerHTML = '<img src="https://cdn.shopify.com/s/files/1/0987/0449/0840/files/C766F65A-70C5-479F-8A1E-E76DC5E288D5.png?v=1778523939" style="width:100%;height:100%;object-fit:cover" alt="Camiseta del Barcelona Aurora" />';
+  document.getElementById('sizeGrid').innerHTML = `<button class="size-btn" data-size="M" onclick="selectSize(this,'static-m')">M</button>`;
+  const first = document.querySelector('#sizeGrid .size-btn');
+  if(first){ first.classList.add('active'); selectedVariantId = first.dataset.size; }
+  featuredProduct = {title:'Camiseta del Barcelona Aurora'};
+}
+
+async function quickAddStatic(event, handle, title) {
+  event.stopPropagation();
+  const btn = event.currentTarget;
+  btn.textContent = 'Añadiendo...';
+  btn.classList.add('loading');
+  try {
+    await ensureCart();
+    // Try to find variant from Shopify
+    const data = await shopifyFetch(`query { productByHandle(handle: "${handle}") { variants(first:1){ edges { node { id } } } } }`);
+    const variantId = data?.productByHandle?.variants?.edges[0]?.node?.id;
+    if(variantId) {
+      await addToCart(variantId, 1, title);
+    } else {
+      showToast('Producto: ' + title + ' - visita la tienda para comprar', '');
+    }
+  } catch(e) {
+    showToast('Visita la tienda para comprar', '');
+  }
+  btn.classList.remove('loading');
+  btn.classList.add('added');
+  btn.textContent = '✓ Añadido';
+  setTimeout(()=>{ btn.classList.remove('added'); btn.textContent = '+ Añadir al Carrito'; }, 2500);
+}
+
+async function _loadProducts_shopify() {
   try {
     setLoadingBar(40);
     const data = await shopifyFetch(PRODUCTS_QUERY, { first: 8 });
